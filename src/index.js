@@ -15,22 +15,17 @@ const data = [
         "data": {
             "id": "history",
             "url": "https://taktaguri.com/",
+            "label": "history"
         }
     },
     {
         "data": { "id": "robotncom->history", "source": "history", "target": "robotncom" }
     },
-    // {
-    //     "data": {
-    //         "id": "logo",
-    //     }
-    // },
-    // {
-    //     "data": { "id": "history->logo", "source": "logo", "target": "history" }
-    // },
     {
         "data": {
             "id": "platform",
+            "label": "platform"
+
         }
     },
     {
@@ -39,6 +34,8 @@ const data = [
     {
         "data": {
             "id": "taktaguri",
+            "label": "taktaguri"
+
         }
     },
     {
@@ -47,7 +44,9 @@ const data = [
     {
         "data": {
             "id": "naafaa",
-            "url": "https://naafaa.co.kr/"
+            "url": "https://naafaa.co.kr/",
+            "label": "naafaa"
+
         }
     },
     {
@@ -56,6 +55,8 @@ const data = [
     {
         "data": {
             "id": "solution",
+            "label": "solution"
+
         }
     },
     {
@@ -64,16 +65,22 @@ const data = [
     {
         "data": {
             "id": "sever",
+            "label": "sever"
+
         }
     },
     {
         "data": {
             "id": "security",
+            "label": "security"
+
         }
     },
     {
         "data": {
             "id": "network",
+            "label": "network"
+
         }
     },
     {
@@ -88,27 +95,13 @@ const data = [
     {
         "data": {
             "id": "computer HW + SW",
+            "label": "computer HW + SW"
+
         }
     },
     {
         "data": { "id": "robotncom->computer HW + SW", "source": "computer HW + SW", "target": "robotncom" }
     },
-    // {
-    //     "data": {
-    //         "id": "STUDY-webpackBuild",
-    //     }
-    // },
-    // {
-    //     "data": { "id": "computer HW + SW->STUDY-webpackBuild", "source": "STUDY-webpackBuild", "target": "computer HW + SW" }
-    // },
-    // {
-    //     "data": {
-    //         "id": "STUDY-jsBrowser",
-    //     }
-    // },
-    // {
-    //     "data": { "id": "STUDY-webpackBuild->STUDY-jsBrowser", "source": "STUDY-jsBrowser", "target": "STUDY-webpackBuild" }
-    // }
 ];
 // 공식 사이트 예제 코드
 const cy = cytoscape({
@@ -122,7 +115,7 @@ const cy = cytoscape({
             selector: 'node',
             style: {
                 'background-color': '#666',
-                'label': 'data(id)'
+                'label': 'data(label)'
             }
         },
 
@@ -144,11 +137,5 @@ const cy = cytoscape({
         gravityRangeCompound: 1.5,
         fit: true,
         tile: true
-    }
-});
-cy.on('tap', function (e) {
-    const url = e.target.data('url')
-    if (url && url !== '') {
-        window.open(url);
     }
 });
